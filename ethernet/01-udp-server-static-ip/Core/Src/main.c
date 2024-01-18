@@ -50,6 +50,8 @@ PCD_HandleTypeDef hpcd_USB_OTG_FS;
 
 /* USER CODE BEGIN PV */
 
+#define UDP_SERVER
+
 u8_t   data[100];
 __IO uint32_t message_count = 0;
 struct udp_pcb *upcb;
@@ -108,6 +110,61 @@ void udp_echoclient_send(void)
     /* free pbuf */
     pbuf_free(p);
   }
+}
+
+void udp_echoserver_receive_callback(void *arg, struct udp_pcb *upcb, struct pbuf *p, const ip_addr_t *addr, u16_t port)
+{
+  struct pbuf *p_tx;
+
+  /* allocate pbuf from RAM*/
+  p_tx = pbuf_alloc(PBUF_TRANSPORT,p->len, PBUF_RAM);
+
+  if(p_tx != NULL)
+  {
+    pbuf_take(p_tx, (char*)p->payload, p->len);
+    /* Connect to the remote client */
+    udp_connect(upcb, addr, port);
+
+    /* Tell the client that we have accepted it */
+    udp_send(upcb, p_tx);
+
+    /* free the UDP connection, so we can accept new clients */
+    udp_disconnect(upcb);
+
+    /* Free the p_tx buffer */
+    pbuf_free(p_tx);
+
+    /* Free the p buffer */
+    pbuf_free(p);
+  }
+}
+
+void udp_echoserver_init(void)
+{
+   ip_addr_t DestIPaddr;
+   struct udp_pcb *upcb;
+   err_t err;
+
+   /* Create a new UDP control block  */
+   upcb = udp_new();
+
+   if (upcb)
+   {
+     /* Bind the upcb to the UDP_PORT port */
+     /* Using IP_ADDR_ANY allow the upcb to be used by any local interface */
+	  IP4_ADDR( &DestIPaddr, 192, 168, 15, 2 );
+      err = udp_bind(upcb, &DestIPaddr, 12345);
+
+      if(err == ERR_OK)
+      {
+        /* Set a receive callback for the upcb */
+        udp_recv(upcb, udp_echoserver_receive_callback, NULL);
+      }
+      else
+      {
+        udp_remove(upcb);
+      }
+   }
 }
 
 /* USER CODE END PV */
@@ -175,9 +232,15 @@ int main(void)
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
 
+#ifdef UDP_SERVER
+  // Open UDP Server at 192.168.15.2 Port 12345
+  // To change access the function below.
+  udp_echoserver_init();
+#else
   // Connect to UDP Server at 192.168.15.11 Port 12345
-  // To change acces the function below.
+  // To change access the function below.
   udp_echoclient_connect();
+#endif
 
   while (1)
   {
@@ -186,8 +249,10 @@ int main(void)
     /* USER CODE BEGIN 3 */
     MX_LWIP_Process();
 
+#ifndef UDP_SERVER
     udp_echoclient_send();
     HAL_Delay(2000);
+#endif
 
   }
   /* USER CODE END 3 */
