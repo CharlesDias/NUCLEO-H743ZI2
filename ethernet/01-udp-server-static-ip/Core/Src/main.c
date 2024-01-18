@@ -174,6 +174,9 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+
+  // Connect to UDP Server at 192.168.15.11 Port 12345
+  // To change acces the function below.
   udp_echoclient_connect();
 
   while (1)
@@ -183,8 +186,8 @@ int main(void)
     /* USER CODE BEGIN 3 */
     MX_LWIP_Process();
 
-//    udp_echoclient_send();
-//    HAL_Delay(2000);
+    udp_echoclient_send();
+    HAL_Delay(2000);
 
   }
   /* USER CODE END 3 */
