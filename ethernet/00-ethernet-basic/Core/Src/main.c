@@ -33,6 +33,8 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
+#define INITIALIZE_MESSAGE_1		"\r\n******************************************************************************\r\n"
+#define INITIALIZE_MESSAGE_2		"                          Ethernet basic configuration\r\n\n"
 
 /* USER CODE END PD */
 
@@ -104,7 +106,6 @@ int main(void)
   MX_LWIP_Init();
   /* USER CODE BEGIN 2 */
 
-  printf("Ethernet basic configuration.\n");
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -225,6 +226,9 @@ static void MX_USART3_UART_Init(void)
     Error_Handler();
   }
   /* USER CODE BEGIN USART3_Init 2 */
+
+  printf(INITIALIZE_MESSAGE_1);
+  printf(INITIALIZE_MESSAGE_2);
 
   /* USER CODE END USART3_Init 2 */
 

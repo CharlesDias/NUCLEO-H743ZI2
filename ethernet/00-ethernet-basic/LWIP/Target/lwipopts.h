@@ -100,6 +100,9 @@
 /*-----------------------------------------------------------------------------*/
 /* USER CODE BEGIN 1 */
 
+#define LWIP_DEBUG 0
+#define NETIF_DEBUG LWIP_DBG_ON
+
 /* USER CODE END 1 */
 
 #ifdef __cplusplus
