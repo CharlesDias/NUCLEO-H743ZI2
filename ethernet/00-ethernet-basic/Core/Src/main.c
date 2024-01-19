@@ -22,6 +22,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include <stdio.h>
 
 /* USER CODE END Includes */
 
@@ -80,6 +81,13 @@ static void MX_USART3_UART_Init(void);
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 
+// Redirect printf to UART 3
+int __io_putchar(int ch)
+{
+	HAL_UART_Transmit(&huart3, (uint8_t*)&ch, 1, 10);
+	return ch;
+}
+
 /* USER CODE END 0 */
 
 /**
@@ -114,6 +122,7 @@ int main(void)
   MX_USART3_UART_Init();
   /* USER CODE BEGIN 2 */
 
+  printf("Ethernet basic configuration.\n");
   /* USER CODE END 2 */
 
   /* Infinite loop */
