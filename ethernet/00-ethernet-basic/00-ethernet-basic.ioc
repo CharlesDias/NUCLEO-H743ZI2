@@ -2,6 +2,8 @@
 CAD.formats=
 CAD.pinconfig=
 CAD.provider=
+CORTEX_M7.CPU_DCache=Enabled
+CORTEX_M7.IPParameters=CPU_DCache
 ETH.IPParameters=MediaInterface
 ETH.MediaInterface=HAL_ETH_RMII_MODE
 File.Version=6
