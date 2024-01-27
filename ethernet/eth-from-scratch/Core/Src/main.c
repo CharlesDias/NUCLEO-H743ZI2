@@ -34,6 +34,8 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
+#define INITIALIZE_MESSAGE_1		"\r\n******************************************************************************\r\n"
+#define INITIALIZE_MESSAGE_2		"                          Ethernet from Scratch\r\n\n"
 
 /* USER CODE END PD */
 
@@ -63,6 +65,13 @@ static void MX_USB_OTG_FS_PCD_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+
+// Redirect printf to UART 3
+int __io_putchar(int ch)
+{
+	HAL_UART_Transmit(&huart3, (uint8_t*)&ch, 1, 10);
+	return ch;
+}
 
 /* USER CODE END 0 */
 
@@ -224,6 +233,9 @@ static void MX_USART3_UART_Init(void)
     Error_Handler();
   }
   /* USER CODE BEGIN USART3_Init 2 */
+
+  printf(INITIALIZE_MESSAGE_1);
+  printf(INITIALIZE_MESSAGE_2);
 
   /* USER CODE END USART3_Init 2 */
 
