@@ -23,6 +23,8 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
+#include "lwip/apps/httpd.h"
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -100,6 +102,9 @@ int main(void)
   MX_LWIP_Init();
   /* USER CODE BEGIN 2 */
 
+  // Initialize the HTTP server
+  httpd_init();
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -109,6 +114,9 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
+
+    // starting the LWIP processing
+    MX_LWIP_Process();
   }
   /* USER CODE END 3 */
 }
