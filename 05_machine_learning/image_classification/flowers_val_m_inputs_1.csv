@@ -1,0 +1,5 @@
+# file created : 2024-02-05 11:24:59
+# dtype=uint8
+# original model features - 10/10
+# (10, 128, 128, 3)/uint8, min/max=[0, 255], mean/std=[127.562, 73.582], serving_default_input_10
+# Note: w/o data, number of item by sample is exceeded: 49152 > 512
