@@ -38072,7 +38072,7 @@
         }
     ],
     "c_activations_count": 1,
-    "date_time": "Mon Feb  5 11:28:08 2024",
+    "date_time": "Mon Feb  5 11:31:03 2024",
     "model_name": "mobilenet_v2_0_35_128_int8",
     "tool_version": {
         "major": 1,

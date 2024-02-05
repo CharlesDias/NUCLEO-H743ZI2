@@ -1,6 +1,6 @@
 Neural Network Tools for STM32 family v1.7.0 (stm.ai v8.1.0-19520)
-Created date          : 2024-02-05 11:28:13
-Parameters            : generate --name flowers -m /home/charlesdias/Code_Study/STM32H7/GitHub/NUCLEO-H743ZI2/05_machine_learning/models_from_cloud/mobilenet_v2_0.35_128_int8.tflite --type tflite --compression none --verbosity 1 --workspace /tmp/mxAI_workspace118104244643603276039971516235051 --output /home/charlesdias/Code_Study/STM32H7/GitHub/NUCLEO-H743ZI2/05_machine_learning/image_classification --allocate-inputs --series stm32h7 --allocate-outputs
+Created date          : 2024-02-05 11:31:07
+Parameters            : generate --name flowers -m /home/charlesdias/Code_Study/STM32H7/GitHub/NUCLEO-H743ZI2/05_machine_learning/models_from_cloud/mobilenet_v2_0.35_128_int8.tflite --type tflite --compression none --verbosity 1 --workspace /tmp/mxAI_workspace119841543573351060853436799321520 --output /home/charlesdias/Code_Study/STM32H7/GitHub/NUCLEO-H743ZI2/05_machine_learning/image_classification --allocate-inputs --series stm32h7 --allocate-outputs
 
 Exec/report summary (generate)
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -11,7 +11,7 @@ compression        :   none
 options            :   allocate-inputs, allocate-outputs                                                                                                    
 optimization       :   balanced                                                                                                                             
 target/series      :   stm32h7                                                                                                                              
-workspace dir      :   /tmp/mxAI_workspace118104244643603276039971516235051                                                                                 
+workspace dir      :   /tmp/mxAI_workspace119841543573351060853436799321520                                                                                 
 output dir         :   /home/charlesdias/Code_Study/STM32H7/GitHub/NUCLEO-H743ZI2/05_machine_learning/image_classification                                  
 model_fmt          :   ss/sa per channel                                                                                                                    
 model_name         :   mobilenet_v2_0_35_128_int8                                                                                                           

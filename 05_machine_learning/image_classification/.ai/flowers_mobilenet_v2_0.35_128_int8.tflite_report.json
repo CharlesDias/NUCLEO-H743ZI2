@@ -1,7 +1,7 @@
 {
     "_allocate_inputs": 4,
     "_allocate_outputs": 4,
-    "cli_parameters": "generate --name flowers -m /home/charlesdias/Code_Study/STM32H7/GitHub/NUCLEO-H743ZI2/05_machine_learning/models_from_cloud/mobilenet_v2_0.35_128_int8.tflite --type tflite --compression none --verbosity 1 --workspace /tmp/mxAI_workspace118104244643603276039971516235051 --output /home/charlesdias/Code_Study/STM32H7/GitHub/NUCLEO-H743ZI2/05_machine_learning/image_classification --allocate-inputs --series stm32h7 --allocate-outputs",
+    "cli_parameters": "generate --name flowers -m /home/charlesdias/Code_Study/STM32H7/GitHub/NUCLEO-H743ZI2/05_machine_learning/models_from_cloud/mobilenet_v2_0.35_128_int8.tflite --type tflite --compression none --verbosity 1 --workspace /tmp/mxAI_workspace119841543573351060853436799321520 --output /home/charlesdias/Code_Study/STM32H7/GitHub/NUCLEO-H743ZI2/05_machine_learning/image_classification --allocate-inputs --series stm32h7 --allocate-outputs",
     "cli_version": {
         "major": 1,
         "micro": 0,
@@ -13,7 +13,7 @@
         "factor": null,
         "layers": {}
     },
-    "date_time": "Mon Feb  5 11:28:08 2024",
+    "date_time": "Mon Feb  5 11:31:03 2024",
     "error": 0,
     "error_str": [],
     "exec_cmd": "generate",

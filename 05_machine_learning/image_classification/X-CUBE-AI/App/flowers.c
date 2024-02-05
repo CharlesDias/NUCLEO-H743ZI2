@@ -2,7 +2,7 @@
   ******************************************************************************
   * @file    flowers.c
   * @author  AST Embedded Analytics Research Platform
-  * @date    Mon Feb  5 11:28:08 2024
+  * @date    Mon Feb  5 11:31:03 2024
   * @brief   AI Tool Automatic Code Generator for Embedded NN computing
   ******************************************************************************
   * @attention
@@ -42,7 +42,7 @@
 #endif
 
 #undef AI_TOOLS_DATE_TIME
-#define AI_TOOLS_DATE_TIME   "Mon Feb  5 11:28:08 2024"
+#define AI_TOOLS_DATE_TIME   "Mon Feb  5 11:31:03 2024"
 
 #undef AI_TOOLS_COMPILE_TIME
 #define AI_TOOLS_COMPILE_TIME    __DATE__ " " __TIME__
